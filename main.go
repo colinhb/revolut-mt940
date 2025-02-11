@@ -224,14 +224,14 @@ func writeMT940(writer io.Writer, iban string, transactions []Transaction) error
 		"swiftTransactionType": func(txn Transaction) string {
 			// README: Ideally we'd have logic to set the Swift Transaction Type
 			// appropriately based on the transaction details. Technically, this is
-			// Field 62 (Statement Line), subfield 6 (part 1, Transaction Type), and
+			// Field 61 (Statement Line), subfield 6 (part 1, Transaction Type), and
 			// it can take on values "S", "N", or "F". For now, we're hard coding "N".
 			return "N"
 		},
 		"swiftIdentificationCode": func(txn Transaction) string {
 			// README: Ideally we'd have logic to set the Swift Identification Code
 			// appropriately based on the transaction details. Technically, this is
-			// Field 62 (Statement Line), subfield 6 (part 2, Identification Code), and
+			// Field 61 (Statement Line), subfield 6 (part 2, Identification Code), and
 			// it can take on a variety of three-letter values. For now, we're
 			// hard-coding "TRF", which is for "transfers".
 			return "TRF"
