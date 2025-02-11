@@ -1,0 +1,6 @@
+:61:{{.DateCompleted | formatDate}}{{. | swiftMark}}{{.Amount | abs | formatMoney}}{{. | swiftTransactionType}}{{. | swiftIdentificationCode}}NONREF
+:86:/ID/{{.ID}}
+/TYPE/{{.Type}}
+/DESC/{{.Description | escapeNewlines}}{{if .Reference}}
+/REF/{{.Reference}}{{end}}
+/BALANCE/{{.Balance | formatMoney}}{{.Currency}}

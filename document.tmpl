@@ -1,0 +1,9 @@
+REVOLUT
+940
+REVOLUT
+:20:REVOLUT
+:25:{{.IBAN}}
+:28C:1
+:60F:C{{.OpeningDate | formatDate}}{{.OpeningBalance | abs | formatMoney}}{{.Currency}}
+{{range .Transactions}}{{template "transaction.tmpl" .}}{{end -}}
+:62F:C{{.ClosingDate | formatDate}}{{.ClosingBalance | abs | formatMoney}}{{.Currency}}
