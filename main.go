@@ -241,7 +241,7 @@ func writeMT940(writer io.Writer, iban string, transactions []Transaction) error
 	// Parse templates
 	tmpl, err := template.New("document.tmpl").
 		Funcs(funcMap).
-		ParseFS(templateFS, "templates/*.tmpl")
+		ParseFS(templateFS, "*.tmpl")
 	if err != nil {
 		return fmt.Errorf("error parsing templates: %v", err)
 	}
